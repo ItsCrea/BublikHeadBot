@@ -87,13 +87,13 @@ async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, Cancel
             cancellationToken: cancellationToken);
     }
 
-    if (Regex.IsMatch(messageText.ToLowerInvariant(),@"(?i).*юр.*|(?i).*юри.*"))
-    {
-        Message sentMessage = await botClient.SendTextMessageAsync(
-            chatId: chatId,
-            text: "До речi, @itsCrea, де код",
-            cancellationToken: cancellationToken);
-    }
+    // if (Regex.IsMatch(messageText.ToLowerInvariant(),@"(?i).*юр.*|(?i).*юри.*"))
+    // {
+    //     Message sentMessage = await botClient.SendTextMessageAsync(
+    //         chatId: chatId,
+    //         text: "До речi, @itsCrea, де код",
+    //         cancellationToken: cancellationToken);
+    // }
     
     if (Regex.IsMatch(messageText.ToLowerInvariant(),@"(?i).*э.*"))
     {

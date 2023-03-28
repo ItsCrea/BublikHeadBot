@@ -33,7 +33,25 @@ Console.ReadLine();
 // Send cancellation request to stop bot
 cts.Cancel();
 
+await MessageToConsole();
 
+async Task MessageToConsole()
+{
+    int prost = 0; 
+
+    Task.Run(() => { 
+        while (true) 
+        { 
+            prost++; 
+            if (prost >= 10) 
+            { 
+                prost = 0; 
+            } 
+            Console.WriteLine($"prost: {prost}"); 
+            Task.Delay(15 * 60 * 1000).Wait(); 
+        } 
+    });
+}
 
 async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
 {
